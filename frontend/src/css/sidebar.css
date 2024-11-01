@@ -1,0 +1,40 @@
+.dash-nav-dropdown-menu {
+  display: none;
+}
+.dash-nav-dropdown.is-active .dash-nav-dropdown-menu {
+  display: block;
+}
+
+.dash-nav {
+  /* style untuk dash-nav */
+  transition: all 0.3s ease;
+}
+.dash-nav.open {
+  /* style ketika menu dalam keadaan terbuka */
+}
+/* Tambahkan style untuk menampilkan atau menyembunyikan sidebar */
+body.sidebar-open .sidebar {
+  transform: translateX(0); /* Menampilkan sidebar */
+}
+
+.sidebar {
+  transform: translateX(-100%); /* Sembunyikan sidebar secara default */
+  transition: transform 0.3s ease;
+}
+
+.dash-nav-item.active {
+  background-color: #2d2f33;
+  color: #ffffff;
+  font-weight: bold;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 8px 16px;
+  margin: 4px 0;
+}
+.logo-image {
+  width: 40px; /* Ubah sesuai ukuran yang diinginkan */
+  height: auto;
+  margin-right: 8px; /* Jarak antara logo dan teks */
+}

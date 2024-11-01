@@ -1,0 +1,47 @@
+.modal-content {
+  max-width: 90%; /* Lebar maksimal untuk modal */
+  width: 500px; /* Lebar modal */
+}
+
+.modal-body {
+  max-height: 70vh; /* Batas tinggi modal-body */
+  overflow-y: auto; /* Scroll jika konten melebihi batas */
+}
+/* Container utama untuk layout */
+.dash {
+  display: flex;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Sidebar dengan lebar tetap */
+.dash .dash-app {
+  flex-grow: 1;
+  padding-left: 240px; /* Sesuaikan dengan lebar sidebar */
+}
+
+/* Sidebar dengan lebar tetap */
+.dash .sidebar {
+  width: 240px; /* Tentukan lebar sidebar */
+  flex-shrink: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+  background-color: #343a40; /* Warna sidebar */
+}
+
+/* Konten utama mengambil sisa ruang */
+.dash .dash-app {
+  flex-grow: 1;
+  padding: 20px;
+  margin-left: 240px; /* Sesuaikan dengan lebar sidebar */
+}
+
+/* Header responsif */
+.dash-app .header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}

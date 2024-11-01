@@ -1,0 +1,259 @@
+/* Container dan Panel */
+.container {
+  margin-top: 20px;
+}
+
+.panel {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: none;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.panel-heading .title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.panel-heading .btn {
+  background-color: #0d6efd;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.panel-heading .btn:hover {
+  background-color: #0a58ca;
+}
+
+/* Tabel */
+.table {
+  margin-bottom: 0;
+}
+
+.table thead th {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid #ddd;
+}
+
+.table tbody td {
+  vertical-align: middle;
+  font-size: 14px;
+  color: #555;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+
+/* User Icon */
+.user_icon {
+  display: flex;
+  align-items: center;
+}
+
+.user_icon img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* Label Status */
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 15px;
+  color: #fff;
+  text-align: center;
+}
+
+.label-success {
+  background-color: #28a745;
+}
+
+.label-danger {
+  background-color: #dc3545;
+}
+
+.label-warning {
+  background-color: #ffc107;
+}
+
+/* Tombol Aksi */
+.btn-link {
+  color: #555;
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+.btn-link:hover {
+  color: #333;
+}
+
+.text-primary {
+  color: #0d6efd !important;
+}
+
+.text-success {
+  color: #28a745 !important;
+}
+
+.text-danger {
+  color: #dc3545 !important;
+}
+
+/* Pagination */
+.pagination {
+  margin: 0;
+}
+
+.pagination .page-item .page-link {
+  color: #0d6efd;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.pagination .page-item .page-link:hover {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+.pagination .disabled .page-link {
+  color: #ccc;
+  pointer-events: none;
+}
+
+/* Modal */
+.modal.fade.show.d-block {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-dialog {
+  max-width: 500px;
+}
+
+.modal-content {
+  border-radius: 8px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.modal-header .modal-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.modal-header .btn-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.modal-header .btn-close:hover {
+  color: #333;
+}
+
+.modal-body {
+  padding: 15px;
+}
+
+.modal-body h5 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.modal-footer {
+  padding: 10px 15px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-footer .btn {
+  padding: 8px 15px;
+  border-radius: 4px;
+}
+
+.modal-footer .btn-primary {
+  background-color: #0d6efd;
+  border: none;
+}
+
+.modal-footer .btn-primary:hover {
+  background-color: #0a58ca;
+}
+
+.modal-footer .btn-danger {
+  background-color: #dc3545;
+  border: none;
+}
+
+.modal-footer .btn-danger:hover {
+  background-color: #c82333;
+}
+
+.modal-footer .btn-secondary {
+  background-color: #6c757d;
+  border: none;
+}
+
+.modal-footer .btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+/* Alert for Success Message */
+.alert {
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+/* Ukuran gambar untuk kolom "Gambar" pada tabel */
+/* Ukuran gambar untuk kolom "Gambar" pada tabel */
+.table tbody td img.img-thumbnail {
+  width: 80px; /* Set ukuran width */
+  height: 80px; /* Set ukuran height yang sama */
+  border-radius: 100%;
+  object-fit: cover; /* Memastikan gambar terpotong sesuai dengan bentuk */
+}
+.modal-scrollable {
+  max-height: 500px; /* Sesuaikan tinggi maksimum modal */
+  overflow-y: auto;
+}

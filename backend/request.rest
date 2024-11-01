@@ -1,0 +1,11 @@
+POST http://localhost:5050/auth/register
+Content-Type: application/json
+
+{
+  "email": "admin@gmail.com",
+  "password": "123",
+  "role": "admin"
+}
+
+###
+GET http://localhost:6060/api/persyaratan

@@ -1,0 +1,20 @@
+/* Header default transparan di bagian atas */
+.header {
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+/* Header berubah solid setelah mulai di-scroll */
+.header-scrolled {
+  background-color: rgba(
+    40,
+    58,
+    90,
+    0.9
+  ); /* Sesuaikan dengan warna solid yang diinginkan */
+  box-shadow: 0 2px 10px rgba(184, 8, 8, 0.1); /* Tambahan opsional: shadow */
+}
+.about {
+  display: block !important;
+  color: black !important;
+}
