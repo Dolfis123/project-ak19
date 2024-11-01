@@ -59,14 +59,6 @@ const Sidebar = () => {
         >
           <i className="fas fa-users"></i> Tim Kami
         </Link>
-        <Link
-          to="/admin-contact"
-          className={`dash-nav-item ${
-            location.pathname === "/admin-contact" ? "active" : ""
-          }`}
-        >
-          <i className="fas fa-envelope"></i> Kontak
-        </Link>
       </nav>
     </div>
   );

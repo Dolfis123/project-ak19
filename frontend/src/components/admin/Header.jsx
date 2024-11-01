@@ -70,10 +70,10 @@ const Header = () => {
             aria-labelledby="dropdownMenu1"
           >
             <a className="dropdown-item" href="#!">
-              Profile
+              Profil
             </a>
             <a onClick={handleLogout} className="dropdown-item" href="#!">
-              Logout
+              Keluar
             </a>
           </div>
         </div>

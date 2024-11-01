@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Modal from "react-modal";
 import logo from "../../images/logo.webp"; // Logo
+
+Modal.setAppElement("#root");
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const navigate = useNavigate();
+  const [isModalOpen, setIsModalOpen] = useState(false); // State untuk mengontrol modal
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -28,13 +32,20 @@ const Login = () => {
         localStorage.setItem("token", data.token);
         localStorage.setItem("role", data.role);
 
-        if (data.role === "users") {
-          navigate("/pegawai-absensi");
-        } else if (data.role === "admin") {
-          navigate("/dashboard");
-        } else {
-          navigate("/all-role");
-        }
+        // Tampilkan modal sukses
+        setIsModalOpen(true);
+
+        // Redirect berdasarkan peran setelah menutup modal
+        setTimeout(() => {
+          setIsModalOpen(false);
+          if (data.role === "users") {
+            navigate("/pegawai-absensi");
+          } else if (data.role === "admin") {
+            navigate("/dashboard");
+          } else {
+            navigate("/all-role");
+          }
+        }, 2000); // Modal akan otomatis tertutup dalam 2 detik
       } else {
         setError(data.message || "Login gagal, silakan coba lagi.");
       }
@@ -80,8 +91,8 @@ const Login = () => {
             />
           </div>
 
-          {/* Password input */}
-          <div className="form-outline mb-4">
+          {/* Password input with eye icon */}
+          <div className="form-outline mb-4 relative">
             <input
               type={showPassword ? "text" : "password"}
               id="form2Example2"
@@ -90,13 +101,16 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
               required
               placeholder="Password"
+              style={{ paddingRight: "2.5rem" }} // Extra padding for icon
             />
-            <div
+            <span
               onClick={togglePasswordVisibility}
-              className="cursor-pointer text-right mt-2 text-sm btn"
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
             >
-              {showPassword ? "Sembunyikan Password" : "Tampilkan Password"}
-            </div>
+              <i
+                className={`fas ${showPassword ? "fa-eye-slash" : "fa-eye"}`}
+              ></i>
+            </span>
           </div>
 
           {/* Error Message */}
@@ -109,26 +123,36 @@ const Login = () => {
           <button type="submit" className="btn btn-primary btn-block mb-4">
             Masuk
           </button>
-
-          {/* Social Buttons */}
-          <div className="text-center">
-            <div className="flex justify-center space-x-3">
-              <button type="button" className="btn btn-link btn-floating">
-                <i className="fab fa-facebook-f"></i>
-              </button>
-              <button type="button" className="btn btn-link btn-floating">
-                <i className="fab fa-google"></i>
-              </button>
-              <button type="button" className="btn btn-link btn-floating">
-                <i className="fab fa-twitter"></i>
-              </button>
-              <button type="button" className="btn btn-link btn-floating">
-                <i className="fab fa-github"></i>
-              </button>
-            </div>
-          </div>
         </form>
       </div>
+
+      {/* Success Modal */}
+      <Modal
+        isOpen={isModalOpen}
+        onRequestClose={() => setIsModalOpen(false)}
+        style={{
+          content: {
+            top: "50%",
+            left: "50%",
+            right: "auto",
+            bottom: "auto",
+            transform: "translate(-50%, -50%)",
+            padding: "30px",
+            textAlign: "center",
+            borderRadius: "10px",
+            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+            maxWidth: "400px",
+            width: "90%",
+          },
+          overlay: {
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+          },
+        }}
+      >
+        <h3 style={{ color: "green", fontSize: "1.2em", fontWeight: "bold" }}>
+          Login Berhasil!
+        </h3>
+      </Modal>
     </div>
   );
 };
