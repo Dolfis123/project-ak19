@@ -53,10 +53,10 @@ const DocumentasiDetail = () => {
               <h3>Project information</h3>
               <ul>
                 <li>
-                  <strong>Title</strong>: {documentation.title}
+                  <strong>Judul</strong>: {documentation.title}
                 </li>
                 <li>
-                  <strong>Created At</strong>:{" "}
+                  <strong>Dibuat pada</strong>:{" "}
                   {new Date(
                     documentation.created_at || ""
                   ).toLocaleDateString()}

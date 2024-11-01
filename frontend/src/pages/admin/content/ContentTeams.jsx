@@ -128,6 +128,36 @@ const ContentTeams = () => {
       console.error("Error saving team member", error);
     }
   };
+  // Tambahkan ini di antara kode-kode fungsi dalam komponen
+
+  // Fungsi untuk membuka modal konfirmasi hapus
+  const confirmDelete = (id) => {
+    setItemToDelete(id);
+    setIsConfirmOpen(true);
+  };
+
+  // Fungsi untuk menghapus data anggota tim
+  const handleDelete = async () => {
+    try {
+      await axios.delete(
+        `http://localhost:3030/api/team/teams/${itemToDelete}`
+      );
+      setTeamMembers((prevMembers) =>
+        prevMembers.filter((member) => member.id !== itemToDelete)
+      );
+      setSuccessMessage("Data berhasil dihapus!");
+    } catch (error) {
+      console.error("Error deleting team member", error);
+    } finally {
+      setIsConfirmOpen(false);
+      setItemToDelete(null);
+
+      // Bersihkan pesan sukses setelah beberapa detik
+      setTimeout(() => {
+        setSuccessMessage("");
+      }, 3000);
+    }
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;

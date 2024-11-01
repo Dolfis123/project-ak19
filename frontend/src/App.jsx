@@ -78,6 +78,7 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+        <Route path="/details/:id" element={<DocumentasiDetail />} />
 
         {/* Route dengan Layout untuk halaman umum */}
         <Route
@@ -101,7 +102,7 @@ const App = () => {
                 <Route path="/documentation" element={<Documentation />} />
                 <Route path="/teams" element={<Teams />} />
                 <Route path="/contact" element={<Contact />} />
-                <Route path="/details/:id" element={<DocumentasiDetail />} />
+                {/* <Route path="/details/:id" element={<DocumentasiDetail />} /> */}
               </Routes>
             </Layout>
           }
